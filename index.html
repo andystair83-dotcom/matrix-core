@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مبتدأ البيان — محرر عربي متكامل للنصوص والوثائق لنظام Windows</title>
+<meta name="description" content="حرّر النصوص، أنشئ المستندات، حوّل الملفات، وابحث واستبدل بسهولة من خلال برنامج واحد مصمم للغة العربية وبيئة Windows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;600;700;800&family=Readex+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!--
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+<!-- مكتبة الأيقونات -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 3c-2 4-5 6-5 10a5 5 0 0 0 10 0c0-4-3-6-5-10z"/><path d="M12 21v-4"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"/></symbol>
+  <symbol id="i-rich" viewBox="0 0 24 24"><path d="M5 7V5h14v2M12 5v14M9 19h6"/></symbol>
+  <symbol id="i-rtl" viewBox="0 0 24 24"><path d="M21 12H8M12 6l-6 6 6 6M21 5v14"/></symbol>
+  <symbol id="i-files" viewBox="0 0 24 24"><path d="M8 3h7l4 4v14H8z"/><path d="M15 3v4h4M5 7v14h11"/></symbol>
+  <symbol id="i-conv" viewBox="0 0 24 24"><path d="M4 9h13l-3.5-3.5M20 15H7l3.5 3.5"/></symbol>
+  <symbol id="i-merge" viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8L4 5z"/></symbol>
+  <symbol id="i-split" viewBox="0 0 24 24"><path d="M12 3v7M12 10l-6 7M12 10l6 7M4 21h4M16 21h4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></symbol>
+  <symbol id="i-tabs" viewBox="0 0 24 24"><path d="M3 8h7l2 2h9v10H3z"/><path d="M3 8V5h6l2 2"/></symbol>
+  <symbol id="i-pal" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c2 0 2.5-1.3 1.7-2.6-.9-1.5.1-3.4 2-3.4H18a3.5 3.5 0 0 0 3-4C20.5 6 16.7 3 12 3z"/><circle cx="8" cy="10" r="1"/><circle cx="12" cy="7.5" r="1"/><circle cx="16" cy="10" r="1"/></symbol>
+  <symbol id="i-fold" viewBox="0 0 24 24"><path d="M3 6h6l2 2h10v12H3z"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M5 3h12l4 4v14H5z"/><path d="M8 3v5h8V3M8 21v-7h8v7"/></symbol>
+  <symbol id="i-enc" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18-3-4-3-14.5 0-18z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H3V3h12v2"/></symbol>
+  <symbol id="i-cut" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><path d="M8.2 7.5 20 18M8.2 16.5 20 6"/></symbol>
+  <symbol id="i-paste" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a3 3 0 0 1 6 0M9 10h6M9 14h6"/></symbol>
+  <symbol id="i-alr" viewBox="0 0 24 24"><path d="M4 6h16M10 10h10M4 14h16M10 18h10"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></symbol>
+  <symbol id="i-ul" viewBox="0 0 24 24"><path d="M7 4v6a5 5 0 0 0 10 0V4M7 20h10"/></symbol>
+  <symbol id="i-bold" viewBox="0 0 24 24"><path d="M8 4h6a4 4 0 0 1 0 8H8zM8 12h7a4 4 0 0 1 0 8H8z"/></symbol>
+  <symbol id="i-it" viewBox="0 0 24 24"><path d="M10 4h9M5 20h9M14.5 4l-5 16"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z"/></symbol>
+  <symbol id="i-font" viewBox="0 0 24 24"><path d="M3 20 9 5l6 15M5.5 14.5h7M17 20l3.5-9 3.5 9" transform="scale(.86) translate(1 1)"/></symbol>
+  <symbol id="i-repl" viewBox="0 0 24 24"><circle cx="10" cy="9" r="5.5"/><path d="M14 13l4 4M18 9h3M19.5 7.5v3M6 21h9"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3v11M7.5 10 12 14.5 16.5 10M4 18v3h16v-3"/></symbol>
+  <symbol id="i-arrl" viewBox="0 0 24 24"><path d="M20 12H4M10 6l-6 6 6 6"/></symbol>
+  <symbol id="i-arrr" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+  <symbol id="i-mem" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="10" rx="2"/><path d="M7 17v3M12 17v3M17 17v3M7 10.5v3M11 10.5v3M15 10.5v3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-bg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+</svg>
+
+<!-- الترويسة -->
+<header id="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="#top"><span class="lm"><svg class="ic"><use href="#i-pen"/></svg></span><span>مبتدأ البيان<small>محرر عربي لنظام Windows</small></span></a>
+    <nav class="main">
+      <a href="#top" class="on">الرئيسية</a><a href="#features">المميزات</a><a href="#editor">المحرر</a><a href="#files">الملفات</a><a href="#interface">الواجهة</a><a href="#shots">اللقطات</a><a href="#download">التحميل</a>
+    </nav>
+    <a href="#download" class="hd-dl"><svg class="ic" style="width:17px;height:17px"><use href="#i-dl"/></svg> تحميل البرنامج</a>
+    <button id="navT" aria-label="القائمة"><svg class="ic"><use href="#i-list"/></svg></button>
+  </div>
+  <div class="mnav">
+    <a href="#top">الرئيسية</a><a href="#features">المميزات</a><a href="#editor">المحرر</a><a href="#files">الملفات</a><a href="#interface">الواجهة</a><a href="#shots">لقطات الشاشة</a><a href="#download">التحميل</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="wrap hero-g">
+    <div>
+      <span class="badge"><i></i> برنامج Windows بواجهة عربية ١٠٠٪</span>
+      <h1>
+        <span class="w"><span style="--d:.05s">محرر</span></span>
+        <span class="w"><span style="--d:.13s">عربي</span></span>
+        <span class="w gd"><span style="--d:.21s">متكامل</span></span>
+        <span class="w"><span style="--d:.29s">للنصوص</span></span>
+        <span class="w"><span style="--d:.37s">والوثائق</span></span>
+      </h1>
+      <p class="lead">حرّر النصوص، أنشئ المستندات، حوّل الملفات، وابحث واستبدل بسهولة من خلال برنامج واحد مصمم للغة العربية وبيئة Windows.</p>
+      <div class="cta">
+        <a href="#download" class="btn btn-p"><svg class="ic"><use href="#i-dl"/></svg> تحميل البرنامج</a>
+        <a href="#features" class="btn btn-g">اكتشف المميزات <svg class="ic" style="width:18px"><use href="#i-arrl"/></svg></a>
+      </div>
+      <div class="fchips">الصيغ المدعومة: <b>TXT</b><b>RTF</b><b>DOC</b><b>DOCX</b></div>
+    </div>
+
+    <div class="hero-mock">
+      <div class="win" id="heroWin">
+        <div class="win-bar">
+          <div class="win-id"><span class="lm"><svg class="ic"><use href="#i-pen"/></svg></span><span id="winTitle">مبتدأ البيان — مستند عربي.docx</span></div>
+          <div class="win-ctl"><button class="ctl min" aria-label="تصغير"></button><button class="ctl max" aria-label="تكبير"></button><button class="ctl cls" aria-label="إغلاق"></button></div>
+        </div>
+        <div class="rtabs">
+          <button class="tf" id="fileBtn">ملف</button><button class="on">الصفحة الرئيسية</button><button>إدراج</button><button>تخطيط</button><button>عرض</button><button>أدوات</button>
+        </div>
+        <div class="ribbon">
+          <div class="rg"><button class="ib big" data-tip="لصق"><svg class="ic"><use href="#i-paste"/></svg></button><button class="ib" data-tip="نسخ"><svg class="ic"><use href="#i-copy"/></svg></button><button class="ib" data-tip="قص"><svg class="ic"><use href="#i-cut"/></svg></button><small>الحافظة</small></div>
+          <div class="rg"><button class="ib" data-tip="عريض"><svg class="ic"><use href="#i-bold"/></svg></button><button class="ib" data-tip="مائل"><svg class="ic"><use href="#i-it"/></svg></button><button class="ib" data-tip="تسطير"><svg class="ic"><use href="#i-ul"/></svg></button><button class="ib" data-tip="لون النص"><svg class="ic"><use href="#i-drop"/></svg></button><button class="ib" data-tip="حجم الخط"><svg class="ic"><use href="#i-font"/></svg></button><small>الخط</small></div>
+          <div class="rg"><button class="ib" data-tip="محاذاة"><svg class="ic"><use href="#i-alr"/></svg></button><button class="ib" data-tip="قوائم"><svg class="ic"><use href="#i-list"/></svg></button><small>الفقرة</small></div>
+          <div class="rg"><button class="ib" data-tip="بحث واستبدال"><svg class="ic"><use href="#i-repl"/></svg></button><small>تحرير</small></div>
+        </div>
+        <div class="dtabs">
+          <button class="dtab on" data-mode="doc">مستند عربي.docx <i>✕</i></button>
+          <button class="dtab" data-mode="txt">ملاحظات.txt <i>✕</i></button>
+          <button class="dtab" data-mode="doc">مسودة.rtf <i>✕</i></button>
+        </div>
+        <div class="ed">
+          <div class="gut"><span>١</span><span class="bm">٢</span><span>٣</span><span>٤</span><span>٥</span><span>٦</span><span>٧</span><span>٨</span></div>
+          <div class="code">
+            <div class="pane-doc">
+              <div class="t1">دليل الاستخدام المختصر</div>
+              <div>مرحبًا بك في مبتدأ البيان؛ محرر عربي يصون النص ويحترم اللغة.</div>
+              <div>نسّق بـ<span class="hg">العريض</span> و<span class="ht">المائل</span>، وحاذِ الأسطر كما تشاء.</div>
+              <div><span class="sel">وابحث واستبدل بدقة تامة.</span></div>
+              <div><span id="typeTarget"></span><span class="caret"></span></div>
+            </div>
+            <div class="pane-txt">
+              <div>١) هذا ملف نصي خالص يُفتح بسرعة فائقة.</div>
+              <div>٢) يدعم البرنامج الأسطر الطويلة جدًا والتمرير السلس.</div>
+              <div>٣) تراجع وإعادة، تكرار السطر، نقله وحذفه وعكس ترتيب الأسطر.</div>
+              <div>٤) علامات مرجعية وتعداد نقطي ورقمي وتحويل حالة الأحرف.<span class="caret"></span></div>
+            </div>
+          </div>
+        </div>
+        <div class="wst">
+          <span>سطر ٤، عمود ١٨</span><span class="chip">UTF-8</span><span class="chip" id="statusFmt">DOCX</span><span class="chip">RTL</span>
+          <span class="end">١٠٠٪</span>
+        </div>
+        <div class="menu" id="fileMenu">
+          <button>جديد</button><button>فتح…</button><button>حفظ</button><button>حفظ باسم…</button><hr>
+          <button>تحويل الملف…</button><button>دمج ملفات…</button><button>تقسيم ملف…</button><hr>
+          <button>تحويل الترميز…</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- شريط الميزات -->
+<div class="marq"><div class="marq-in">
+  <span>محرر نصوص سريع</span><em>❖</em>
+  <span>نصوص منسّقة</span><em>❖</em>
+  <span>دعم كامل للعربية وRTL</span><em>❖</em>
+  <span>TXT</span><em>❖</em>
+  <span>RTF</span><em>❖</em>
+  <span>DOC</span><em>❖</em>
+  <span>DOCX</span><em>❖</em>
+  <span>تحويل الملفات</span><em>❖</em>
+  <span>دمج</span><em>❖</em>
+  <span>تقسيم</span><em>❖</em>
+  <span>بحث واستبدال متقدم</span><em>❖</em>
+  <span>علامات تبويب</span><em>❖</em>
+  <span>سمات متعددة</span><em>❖</em>
+</div></div>
+
+<!-- المميزات -->
+<section id="features">
+  <div class="wrap">
+    <span class="eyeb rv">المميزات</span>
+    <h2 class="sec rv">كل ما تحتاجه للكتابة والتحرير</h2>
+    <p class="lead2 rv">عشر ركائز تجعل من مبتدأ البيان أداتك اليومية الأولى للنصوص والوثائق.</p>
+    <div class="fg">
+      <div class="fc s5 rv"><div class="fi"><svg class="ic"><use href="#i-bolt"/></svg></div><h3>محرر نصوص سريع</h3><p>محرر مصمم للتعامل مع الملفات الكبيرة، مع نظام تخزين مؤقت وتقنيات Virtualization للحفاظ على سرعة البرنامج مهما تضخم الملف.</p></div>
+      <div class="fc s4 rv" style="--ac:var(--teal);--d:.08s"><div class="fi"><svg class="ic"><use href="#i-rich"/></svg></div><h3>محرر نصوص منسق</h3><p>تحرير المستندات بالتنسيق الكامل:</p><div class="tags"><i>عريض</i><i>مائل</i><i>تحته خط</i><i>المحاذاة</i><i>الألوان</i><i>حجم الخط</i><i>نوع الخط</i><i>القوائم والترقيم</i></div></div>
+      <div class="fc s3 rv" style="--d:.16s"><div class="fi"><svg class="ic"><use href="#i-rtl"/></svg></div><h3>العربية وRTL أولًا</h3><p>الواجهة والمحرر مصممان للكتابة من اليمين إلى اليسار، مع تعامل طبيعي مع النصوص العربية.</p></div>
+      <div class="fc s3 rv"><div class="fi"><svg class="ic"><use href="#i-files"/></svg></div><h3>دعم عدة صيغ</h3><p>فتح وتحرير أشهر صيغ النصوص والوثائق:</p><div class="tags"><i>TXT</i><i>RTF</i><i>DOC</i><i>DOCX</i></div></div>
+      <div class="fc s3 rv" style="--ac:var(--teal);--d:.08s"><div class="fi"><svg class="ic"><use href="#i-conv"/></svg></div><h3>تحويل الملفات</h3><p>تحويل الملفات بين الصيغ المدعومة، مع دعم تحويل النصوص والمستندات.</p></div>
+      <div class="fc s3 rv" style="--d:.16s"><div class="fi"><svg class="ic"><use href="#i-merge"/></svg></div><h3>دمج الملفات</h3><p>دمج عدة ملفات في ملف واحد، مع دعم المستندات والملفات النصية.</p></div>
+      <div class="fc s3 rv" style="--d:.24s"><div class="fi"><svg class="ic"><use href="#i-split"/></svg></div><h3>تقسيم الملفات</h3><p>تقسيم الملفات الكبيرة إلى أجزاء حسب الحجم:</p><div class="tags"><i>KB</i><i>MB</i><i>GB</i></div></div>
+      <div class="fc s5 rv"><div class="fi" style="--ac:var(--teal)"><svg class="ic"><use href="#i-search"/></svg></div><h3>بحث واستبدال متقدم</h3><p>أدوات بحث دقيقة داخل النصوص مع خيارات:</p><div class="tags"><i>تعبيرات نمطية Regex</i><i>مطابقة الكلمة كاملة</i><i>حساسية حالة الأحرف</i><i>التالي والسابق</i><i>استبدال</i><i>استبدال الكل</i></div></div>
+      <div class="fc s4 rv" style="--d:.08s"><div class="fi"><svg class="ic"><use href="#i-tabs"/></svg></div><h3>علامات تبويب متعددة</h3><p>افتح عدة ملفات في الوقت نفسه وتنقّل بينها عبر علامات تبويب واضحة وسهلة الاستخدام.</p></div>
+      <div class="fc s3 rv" style="--d:.16s"><div class="fi"><svg class="ic"><use href="#i-pal"/></svg></div><h3>سمات متعددة</h3><p>سمات جاهزة متنوعة مع إمكانية تخصيص الألوان كما يناسب عينيك.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- المحرر النصي -->
+<section id="editor">
+  <div class="wrap ed-g">
+    <div class="sticky rv">
+      <span class="eyeb">المحرر النصي</span>
+      <h2 class="sec">مصمم للتعامل مع النصوص الكبيرة</h2>
+      <p class="lead2">يعرض المحرر الصفوف المطلوبة فقط بدل تحميل كل المحتوى بصريًا في الوقت نفسه، فيبقى التمرير والتحرير بسلاسة تامة حتى مع الملفات والسطور الطويلة جدًا.</p>
+      <div class="virt">
+        <div class="lines"><div class="vw"></div></div>
+        <small>يُعرض على الشاشة ما تحتاجه عينك فقط — هكذا تبقى السرعة مهما كبر الملف.</small>
+      </div>
+    </div>
+    <ul class="edlist">
+      <li class="rv"><svg class="ic"><use href="#i-check"/></svg>عرض الصفوف المطلوبة فقط (Virtualization)</li>
+      <li class="rv" style="--d:.05s"><svg class="ic"><use href="#i-check"/></svg>دعم الملفات والسطور الطويلة جدًا</li>
+      <li class="rv" style="--d:.1s"><svg class="ic"><use href="#i-check"/></svg>التمرير الأفقي والرأسي</li>
+      <li class="rv" style="--d:.15s"><svg class="ic"><use href="#i-check"/></svg>التفاف النص Word Wrap</li>
+      <li class="rv"><svg class="ic"><use href="#i-check"/></svg>تحديد النص بدقة</li>
+      <li class="rv" style="--d:.05s"><svg class="ic"><use href="#i-check"/></svg>نسخ وقص ولصق</li>
+      <li class="rv" style="--d:.1s"><svg class="ic"><use href="#i-check"/></svg>تراجع وإعادة</li>
+      <li class="rv" style="--d:.15s"><svg class="ic"><use href="#i-check"/></svg>تكرار السطر</li>
+      <li class="rv"><svg class="ic"><use href="#i-check"/></svg>نقل السطر لأعلى وأسفل</li>
+      <li class="rv" style="--d:.05s"><svg class="ic"><use href="#i-check"/></svg>حذف السطر</li>
+      <li class="rv" style="--d:.1s"><svg class="ic"><use href="#i-check"/></svg>عكس ترتيب الأسطر</li>
+      <li class="rv" style="--d:.15s"><svg class="ic"><use href="#i-check"/></svg>تحويل حالة الأحرف</li>
+      <li class="rv"><svg class="ic"><use href="#i-check"/></svg>إضافة التعداد النقطي والرقمي</li>
+      <li class="rv" style="--d:.05s"><svg class="ic"><use href="#i-check"/></svg>علامات مرجعية على الأسطر</li>
+      <li class="rv" style="--d:.1s"><svg class="ic"><use href="#i-check"/></svg>دعم البحث والاستبدال</li>
+    </ul>
+  </div>
+</section>
+
+<!-- إدارة الملفات -->
+<section id="files">
+  <div class="wrap">
+    <span class="eyeb rv">إدارة الملفات</span>
+    <h2 class="sec rv">ملفاتك… فتحًا وحفظًا وتحويلًا</h2>
+    <p class="lead2 rv">أدوات ملفات متكاملة داخل البرنامج نفسه، دون حاجة لأي برنامج خارجي.</p>
+    <div class="flg">
+      <div class="flc rv"><div class="fi"><svg class="ic"><use href="#i-fold"/></svg></div><h3>فتح الملفات</h3><p>افتح ملفاتك مباشرة بصيغها المختلفة وابدأ التحرير فورًا.</p><div class="tags"><i>TXT</i><i>RTF</i><i>DOC</i><i>DOCX</i></div></div>
+      <div class="flc rv" style="--d:.07s"><div class="fi"><svg class="ic"><use href="#i-save"/></svg></div><h3>حفظ وحفظ باسم</h3><p>حفظ ملفات النصوص بصيغة UTF-8، مع خيارات الحفظ والتحويل.</p><div class="tags"><i>UTF-8</i><i>حفظ باسم</i></div></div>
+      <div class="flc rv" style="--d:.14s"><div class="fi"><svg class="ic"><use href="#i-conv"/></svg></div><h3>التحويل</h3><p>تحويل الملفات بين الصيغ المختلفة بضغطة واحدة.</p><div class="tags"><i>TXT ⇄ DOCX</i><i>RTF ⇄ TXT</i></div></div>
+      <div class="flc rv"><div class="fi"><svg class="ic"><use href="#i-merge"/></svg></div><h3>الدمج</h3><p>جمع عدة ملفات في ملف واحد مرتّب، نصوصًا ومستندات.</p><div class="tags"><i>ملف واحد ناتج</i></div></div>
+      <div class="flc rv" style="--d:.07s"><div class="fi"><svg class="ic"><use href="#i-split"/></svg></div><h3>التقسيم</h3><p>تقسيم الملفات الكبيرة إلى أجزاء محددة الحجم يسهل تداولها.</p><div class="tags"><i>KB</i><i>MB</i><i>GB</i></div></div>
+      <div class="flc rv" style="--d:.14s"><div class="fi"><svg class="ic"><use href="#i-enc"/></svg></div><h3>تحويل الترميز</h3><p>دعم تحويل ترميز النصوص بين أشهر الترميزات العربية.</p><div class="tags"><i>UTF-8</i><i>Windows-1256</i></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- الواجهة -->
+<section id="interface">
+  <div class="wrap if-g">
+    <div class="rv">
+      <span class="eyeb">واجهة البرنامج</span>
+      <h2 class="sec">واجهة مخصصة… لا قالب ويندوز التقليدي</h2>
+      <p class="lead2">بنينا واجهة خاصة من الصفر لتبدو عربية الملامح، حديثة المظهر، مريحة الاستخدام. مرّر المؤشر على أدوات النموذج المجاور لتجرّب التلميحات، وافتح قائمة «ملف».</p>
+      <ul class="iflist">
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>شريط Ribbon مخصص</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>شريط عنوان مخصص</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>أزرار إغلاق وتصغير وتكبير مخصصة</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>قوائم منسدلة بتصميم مخصص</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>أيقونات حديثة</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>تأثيرات زجاجية وظلال</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>بطاقات وأقسام منظمة داخل Ribbon</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>Tooltips تظهر عند المرور</li>
+        <li class="rv"><svg class="ic"><use href="#i-check"/></svg>تصميم RTL كامل</li>
+      </ul>
+    </div>
+    <div class="if-demo rv" style="--d:.1s">
+      <div class="win">
+        <div class="win-bar"><div class="win-id"><span class="lm"><svg class="ic"><use href="#i-pen"/></svg></span><span>مبتدأ البيان — معاينة الواجهة</span></div><div class="win-ctl"><button class="ctl min"></button><button class="ctl max"></button><button class="ctl cls"></button></div></div>
+        <div class="rtabs"><button class="tf" id="fileBtn2">ملف</button><button class="on">الصفحة الرئيسية</button><button>إدراج</button><button>عرض</button></div>
+        <div class="ribbon">
+          <div class="rg"><button class="ib big" data-tip="لصق"><svg class="ic"><use href="#i-paste"/></svg></button><button class="ib" data-tip="نسخ"><svg class="ic"><use href="#i-copy"/></svg></button><button class="ib" data-tip="قص"><svg class="ic"><use href="#i-cut"/></svg></button><small>الحافظة</small></div>
+          <div class="rg"><button class="ib" data-tip="عريض"><svg class="ic"><use href="#i-bold"/></svg></button><button class="ib" data-tip="مائل"><svg class="ic"><use href="#i-it"/></svg></button><button class="ib" data-tip="تسطير"><svg class="ic"><use href="#i-ul"/></svg></button><small>الخط</small></div>
+          <div class="rg"><button class="ib" data-tip="محاذاة"><svg class="ic"><use href="#i-alr"/></svg></button><button class="ib" data-tip="قوائم"><svg class="ic"><use href="#i-list"/></svg></button><small>الفقرة</small></div>
+        </div>
+        <div class="ed" style="height:190px"><div class="gut"><span>١</span><span>٢</span><span>٣</span><span>٤</span><span>٥</span></div><div class="code"><div class="t1">واجهة عربية خالصة</div><div>مرّر المؤشر على الأزرار في الأعلى لتظهر التلميحات.</div><div>وافتح قائمة «ملف» لترى القائمة المنسدلة المخصصة.</div></div></div>
+        <div class="wst"><span class="chip">RTL</span><span class="chip">سمة ليلية</span><span class="end">تأثيرات زجاجية</span></div>
+        <div class="menu" id="fileMenu2"><button>جديد</button><button>فتح…</button><button>حفظ</button><button>حفظ باسم…</button><hr><button>تحويل الملف…</button><button>دمج ملفات…</button><button>تقسيم ملف…</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- الأداء -->
+<section id="perf">
+  <div class="wrap">
+    <span class="eyeb rv">الأداء</span>
+    <h2 class="sec rv">أداء سريع حتى مع الملفات الكبيرة</h2>
+    <p class="lead2 rv">صُمم مبتدأ البيان ليبقى سريعًا وسلسًا دائمًا؛ تقنيات ذكية تعمل بصمت خلف الكواليس لتستمتع أنت بالكتابة.</p>
+    <div class="stack">
+      <div class="sc2" style="--i:0"><span class="num">٠١</span><div><h3>تخزين مؤقت للنصوص</h3><p>ما تكتبه يبقى جاهزًا أمامك، فيستجيب البرنامج لحظة بلحظة.</p></div><div class="fi"><svg class="ic"><use href="#i-bolt"/></svg></div></div>
+      <div class="sc2" style="--i:1"><span class="num">٠٢</span><div><h3>تخزين قياسات النص</h3><p>يحسب البرنامج أبعاد الأسطر مرة واحدة ويعيد استخدامها بذكاء.</p></div><div class="fi"><svg class="ic"><use href="#i-eye"/></svg></div></div>
+      <div class="sc2" style="--i:2"><span class="num">٠٣</span><div><h3>تقسيم الأسطر الطويلة</h3><p>السطر الواحد الطويل يُعالج كأجزاء صغيرة ليستقيم التمرير.</p></div><div class="fi"><svg class="ic"><use href="#i-split"/></svg></div></div>
+      <div class="sc2" style="--i:3"><span class="num">٠٤</span><div><h3>معالجة في الخلفية</h3><p>المهام الثقيلة تعمل بصمت خلف الكواليس دون أن يتجمّد شيء.</p></div><div class="fi"><svg class="ic"><use href="#i-gear"/></svg></div></div>
+      <div class="sc2" style="--i:4"><span class="num">٠٥</span><div><h3>تحميل حسب الحاجة</h3><p>يُحمَل من الملف ما يظهر على الشاشة فقط، لا الملف كله.</p></div><div class="fi"><svg class="ic"><use href="#i-dl"/></svg></div></div>
+      <div class="sc2" style="--i:5"><span class="num">٠٦</span><div><h3>تقليل إعادة الرسم</h3><p>لا يُعاد رسمُ إلا ما تغيّر فعلًا، فتبقى الواجهة سلسة.</p></div><div class="fi"><svg class="ic"><use href="#i-rich"/></svg></div></div>
+      <div class="sc2" style="--i:6"><span class="num">٠٧</span><div><h3>إدارة ذاكرة متزنة</h3><p>ذاكرة مُدارة بحكمة تحفظ السرعة حتى مع المستندات الضخمة.</p></div><div class="fi"><svg class="ic"><use href="#i-mem"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- البحث والاستبدال -->
+<section id="search">
+  <div class="wrap sr-g">
+    <div class="rv">
+      <span class="eyeb">البحث والاستبدال</span>
+      <h2 class="sec">ابحث بدقة… واستبدل بثقة</h2>
+      <p class="lead2">ابحث داخل مستنداتك بسرعة واستبدل النصوص بدقة باستخدام أدوات بحث متقدمة تدعم التعبيرات النمطية، مطابقة الكلمات، وحساسية حالة الأحرف.</p>
+      <div class="sr-opts"><i>تعبيرات نمطية Regex</i><i>مطابقة الكلمة كاملة</i><i>حساسية حالة الأحرف</i><i>التالي والسابق</i><i>استبدال</i><i>استبدال الكل</i></div>
+    </div>
+    <div class="demo rv" style="--d:.1s">
+      <div class="demo-bar"><svg class="ic" style="width:18px"><use href="#i-search"/></svg> نافذة البحث والاستبدال — جرّبها الآن</div>
+      <div class="demo-body">
+        <div class="demo-row"><label>بحث:</label><input type="text" id="q" value="النص" placeholder="اكتب ما تبحث عنه…"></div>
+        <div class="demo-row"><label>استبدال:</label><input type="text" id="r" value="النصّ" placeholder="البديل…"></div>
+        <div class="demo-row">
+          <label class="chk"><input type="checkbox" id="optRegex"> تعبيرات نمطية</label>
+          <label class="chk"><input type="checkbox" id="optWord"> الكلمة كاملة</label>
+          <label class="chk"><input type="checkbox" id="optCase"> حساسية الحالة</label>
+        </div>
+        <div class="demo-btns">
+          <button class="dbtn" id="btnNext">التالي ↓</button>
+          <button class="dbtn" id="btnPrev">السابق ↑</button>
+          <button class="dbtn" id="btnOne">استبدال</button>
+          <button class="dbtn pr" id="btnAll">استبدال الكل</button>
+          <span id="cnt"></span>
+        </div>
+        <div class="sample" id="sample"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- السمات -->
+<section id="themes">
+  <div class="wrap th-g">
+    <div class="rv">
+      <span class="eyeb">السمات والتخصيص</span>
+      <h2 class="sec">اختر المظهر الذي يناسبك</h2>
+      <p class="lead2">عدة سمات جاهزة، ألوان قابلة للتخصيص، وتغيير لألوان الخلفية والواجهة والنص — بمظهر موحد يشمل البرنامج بالكامل. جرّب بنفسك:</p>
+      <div class="sws" id="sws"></div>
+      <div class="picks">
+        <label>تخصيص: الخلفية <input type="color" id="pickBg"></label>
+        <label>النص <input type="color" id="pickTx"></label>
+        <label>الواجهة <input type="color" id="pickAc"></label>
+      </div>
+    </div>
+    <div class="rv" style="--d:.1s">
+      <div class="tprev" id="tprev">
+        <div class="tb"><span class="d"></span><span class="d"></span><span class="d"></span><span style="margin-inline-start:auto">مبتدأ البيان — الوثيقة</span></div>
+        <div class="tc">
+          <div class="a">العنوان الرئيسي للمستند</div>
+          <div>هكذا يبدو محررك بالسمة المختارة، بمظهر موحد يشمل النوافذ والقوائم كلها.</div>
+          <div class="bar"></div><div class="bar2"></div><div class="bar2" style="width:56%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- لقطات الشاشة -->
+<section id="shots">
+  <div class="wrap">
+    <span class="eyeb rv">لقطات الشاشة</span>
+    <h2 class="sec rv">شاهد البرنامج عن قرب</h2>
+    <p class="lead2 rv">نماذج توضيحية مطابقة لهوية البرنامج — تُستبدل باللقطات الحقيقية فور توفرها.</p>
+    <div class="shots-nav rv"><button id="shotPrev" aria-label="السابق"><svg class="ic"><use href="#i-arrr"/></svg></button><button id="shotNext" aria-label="التالي"><svg class="ic"><use href="#i-arrl"/></svg></button></div>
+    <div class="shots rv" id="shotTrack">
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b1"><i></i><i></i><i></i><span style="margin-inline-start:auto">مبتدأ البيان</span></div><div class="b2"><s class="on">الرئيسية</s><s>إدراج</s><s>عرض</s></div><div class="b3"><i class="g"></i><i></i><i></i><i></i><i class="g"></i><i></i></div><div class="bd"><div class="gd2">١<br>٢<br>٣<br>٤</div><div class="ln"><i class="g"></i><i class="w"></i><i class="w2"></i><i class="t"></i><i class="w"></i></div></div></div></div><figcaption><span class="n">١</span> الواجهة الرئيسية</figcaption></figure>
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b2"><s class="on">الرئيسية</s><s>إدراج</s><s>تخطيط</s><s>عرض</s></div><div class="b3" style="height:64px;align-items:center"><i class="g" style="width:26px;height:26px"></i><i></i><i></i><i style="margin-inline-start:10px"></i><i></i><i></i><i class="g"></i><i style="margin-inline-start:10px"></i><i></i></div><div class="b3"><i></i><i class="g"></i><i></i><i></i></div></div></div><figcaption><span class="n">٢</span> شريط Ribbon</figcaption></figure>
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b1"><i></i><i></i><span style="margin-inline-start:auto">ملاحظات.txt</span></div><div class="bd" style="height:170px"><div class="gd2">١<br><br>٣<br><br>٥<br></div><div class="ln"><i class="w"></i><i class="w2"></i><i class="w"></i><i class="t"></i><i class="w2"></i><i class="w"></i></div></div></div></div><figcaption><span class="n">٣</span> محرر النصوص</figcaption></figure>
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b1"><i></i><i></i><span style="margin-inline-start:auto">مستند.docx</span></div><div class="bd" style="height:170px;background:#1a2732"><div class="sheet"><i class="h"></i><i style="width:92%"></i><i style="width:85%"></i><i class="b"></i><i style="width:90%"></i><i style="width:60%"></i></div></div></div></div><figcaption><span class="n">٤</span> محرر المستندات</figcaption></figure>
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b1"><span>البحث والاستبدال</span></div><div class="dlg"><i class="a"></i><i></i><i style="height:10px;width:60%"></i><i class="a" style="height:12px;width:40%"></i></div><div class="bd" style="height:70px"><div class="ln"><i class="w"></i><i class="g" style="width:20%"></i></div></div></div></div><figcaption><span class="n">٥</span> نافذة البحث والاستبدال</figcaption></figure>
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b1"><span>تحويل الملفات</span></div><div class="dlg"><i style="height:12px"></i><i class="a" style="height:8px;width:75%"></i><i style="height:12px"></i><i class="a" style="height:8px;width:45%"></i><i style="height:12px"></i><i class="a" style="height:8px;width:90%"></i></div></div></div><figcaption><span class="n">٦</span> نافذة تحويل الملفات</figcaption></figure>
+      <figure class="shot"><div class="fr"><div class="mn"><div class="b1"><span>السمات</span></div><div class="row3"><div class="tp" style="background:#0d141b;border:1px solid #2a3a48"></div><div class="tp" style="background:#f3ede2;border:1px solid #c9bda6"></div><div class="tp" style="background:#06201d;border:1px solid #14584e"></div></div></div></div><figcaption><span class="n">٧</span> السمات المختلفة</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- لماذا -->
+<section id="why">
+  <div class="wrap">
+    <span class="eyeb rv">لماذا هذا البرنامج؟</span>
+    <h2 class="big rv">كل أدوات النصوص والوثائق في مكان واحد</h2>
+    <p class="lead2 rv" style="margin-top:18px">بدلًا من استخدام عدة برامج للكتابة والتحرير والتحويل وإدارة الملفات، يوفر لك هذا البرنامج مجموعة متكاملة من الأدوات في واجهة واحدة حديثة ومصممة خصيصًا لتجربة عربية مريحة.</p>
+    <div class="eq rv">
+      <span class="e">محرر نصوص</span><span class="op">+</span>
+      <span class="e">معالج وثائق</span><span class="op">+</span>
+      <span class="e">محوّل صيغ</span><span class="op">+</span>
+      <span class="e">دمج وتقسيم</span><span class="op">+</span>
+      <span class="e">بحث متقدم</span><span class="op">=</span>
+      <span class="e res">مبتدأ البيان</span>
+    </div>
+  </div>
+</section>
+
+<!-- التحميل -->
+<section id="download">
+  <div class="wrap"><div class="card rv">
+    <h2>حمّل مبتدأ البيان الآن</h2>
+    <p>برنامج واحد ينجز معظم أعمال تحرير النصوص والوثائق وإدارة الملفات — بواجهة عربية صُممت لك.</p>
+    <!--
+      رابط التحميل الفعلي:
+      1) ارفع ملف التثبيت (مثلاً setup.exe) إلى استضافتك، أو إلى GitHub Releases،
+         أو Google Drive/Dropbox برابط تنزيل مباشر.
+      2) استبدل "downloads/setup.exe" أدناه بالمسار أو الرابط الحقيقي.
+      خاصية download تقترح اسم الملف عند الحفظ لدى الزائر.
+    -->
+    <a href="downloads/app.zip" download="محرر الوثائق النصية.zip" class="btn btn-p js-download"><svg class="ic"><use href="#i-dl"/></svg> تحميل البرنامج لنظام Windows</a>
+    <div class="note"><svg class="ic" style="width:16px"><use href="#i-check"/></svg> مصمم لنظام Windows — الإصدار ١.٠ · الحجم ~00 ميجابايت</div>
+
+    <!-- زر الإعجاب -->
+    <div class="like-box">
+      <button id="likeBtn" class="like-btn" aria-pressed="false">
+        <span class="lh">❤</span> <span id="likeLabel">أعجبني</span>
+      </button>
+      <span class="like-count"><b id="likeCount">—</b> إعجاب</span>
+    </div>
+  </div></div>
+</section>
+
+<!-- آراء العملاء / التعليقات -->
+<section id="comments">
+  <div class="wrap">
+    <span class="eyeb rv">🗯️ آراء العملاء</span>
+    <h2 class="sec rv">شاركنا رأيك</h2>
+    <p class="lead2 rv">اكتب تجربتك مع البرنامج — تعليقك يساعد الآخرين على التعرف عليه.</p>
+
+    <!--
+      ملاحظة هامة: التعليقات هنا تُحفظ محليًا في متصفح كل زائر (localStorage)
+      فقط لغرض العرض التجريبي — أي أن كل زائر يرى تعليقاته الخاصة به فقط، ولا
+      تظهر تعليقات زائر لزائر آخر. لعرض تعليقات جميع الزوار للجميع فعليًا
+      تحتاج خدمة خارجية تخزّن البيانات على خادم، مثل:
+      - Giscus (مجاني، يعتمد على GitHub Discussions): giscus.app
+      - Disqus (مجاني، جاهز للتضمين): disqus.com
+      - أو قاعدة بيانات مثل Firebase / Supabase لتحكم كامل بالتصميم والإشراف.
+    -->
+    <form id="cForm" class="c-form rv">
+      <input type="text" id="cName" placeholder="اسمك" maxlength="40" required>
+      <textarea id="cText" placeholder="اكتب تعليقك هنا…" maxlength="400" required></textarea>
+      <button type="submit" class="btn btn-p">🗯️ نشر التعليق</button>
+    </form>
+
+    <div id="cList" class="c-list"></div>
+  </div>
+</section>
+
+<!-- التذييل -->
+<footer>
+  <div class="wrap ft">
+    <div>
+      <a class="logo" href="#top"><span class="lm"><svg class="ic"><use href="#i-pen"/></svg></span><span>مبتدأ البيان</span></a>
+      <p class="ab">محرر عربي متكامل للنصوص والوثائق لنظام Windows: تحرير، تنسيق، تحويل، دمج وتقسيم، وبحث متقدم — بواجهة عربية أصيلة.</p>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <a href="#top">الرئيسية</a><a href="#features">المميزات</a><a href="#shots">لقطات الشاشة</a><a href="#download">التحميل</a>
+    </div>
+    <div>
+      <h4>البرنامج</h4>
+      <a href="#" data-modal="mSupport">الدعم</a>
+      <a href="#" data-modal="mAbout">حول البرنامج</a>
+      <a href="#" data-modal="mPrivacy">سياسة الخصوصية</a>
+    </div>
+  </div>
+  <div class="wrap fbot"><span>حقوق النشر © <span id="year">٢٠٢٦</span> مبتدأ البيان — جميع الحقوق محفوظة.</span><span>صُنع بحبٍّ للغة العربية ❖</span></div>
+</footer>
+
+<!-- النوافذ المنبثقة -->
+<div class="modal" id="mAbout"><div class="ov"></div><div class="bx"><button class="x">✕</button><h3>حول البرنامج</h3><p>«مبتدأ البيان» محرر نصوص ومعالج وثائق عربي متكامل لنظام Windows، يجمع بين محرر نصوص سريع، ومحرر منسق، وأدوات تحويل ودمج وتقسيم الملفات، وبحث واستبدال متقدم — في واجهة Ribbon مخصصة ومصممة بالكامل للاتجاه من اليمين إلى اليسار.</p><p>الاسم «مبتدأ البيان» مقترحٌ لهوية الموقع ويمكن استبداله باسم برنامجك النهائي.</p></div></div>
+<div class="modal" id="mSupport"><div class="ov"></div><div class="bx"><button class="x">✕</button><h3>الدعم</h3><p>للاستفسارات والملاحظات حول البرنامج، خصص هنا قناة الدعم الرسمية (بريد إلكتروني أو نموذج تواصل) عند النشر.</p><p>ستجد في الموقع شرحًا وافيًا للمميزات ولقطات الواجهة تجيب عن معظم الأسئلة الشائعة.</p></div></div>
+<div class="modal" id="mPrivacy"><div class="ov"></div><div class="bx"><button class="x">✕</button><h3>سياسة الخصوصية</h3><p>يعمل البرنامج محليًا على جهازك، وتبقى ملفاتك ومعالجتها داخل جهازك.</p><p>هذه الصفحة نموذج مختصر لسياسة الخصوصية؛ استكملها ببنودك النهائية قبل النشر.</p></div></div>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
