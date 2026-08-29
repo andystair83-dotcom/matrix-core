@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andystair83-dotcom.github.io/matrix-core/sitemap.xml
